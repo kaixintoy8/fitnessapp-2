@@ -1,4 +1,5 @@
-import 'package:fitnessapp/bottombar_pages/discover.dart';
+import 'package:fitnessapp/sign_in/continue_phone_number.dart';
+import 'package:fitnessapp/sign_in/sign_in_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DiscoverPage(),
+      home: ContinuePhoneNumber(),
     );
   }
 }
