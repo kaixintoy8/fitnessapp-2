@@ -4,6 +4,7 @@ import 'package:fitnessapp/bottombar_pages/qr.dart';
 import 'package:fitnessapp/bottombar_pages/workout.dart';
 import 'package:fitnessapp/gym_detail.dart';
 import 'package:fitnessapp/notifications_page.dart';
+import 'package:fitnessapp/search_page.dart';
 import 'package:fitnessapp/views/choose_card.dart';
 import 'package:fitnessapp/views/latest_seen_card.dart';
 import 'package:fitnessapp/views/nearby_card.dart';
@@ -53,7 +54,11 @@ class _DiscoverPageState extends State<DiscoverPage> {
                       )),
                     Expanded(
                       flex: 1,
-                      child: IconButton(onPressed: (){}, icon: Icon(Icons.search,color: Colors.white,)))
+                      child: IconButton(
+                        onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> SearchPage()));
+                        }, 
+                        icon: Icon(Icons.search,color: Colors.white,)))
                   ],
                 ),
               ),

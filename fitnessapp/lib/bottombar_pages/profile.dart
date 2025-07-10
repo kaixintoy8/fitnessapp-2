@@ -26,7 +26,7 @@ class _ProfileState extends State<Profile> {
     MySecondList(icon: Icons.language_rounded, title: "Language"),
   ];
   final List<MyThirdList> thirdList=[
-    MyThirdList(icon: Icons.help, title: "help and Support"),
+    MyThirdList(icon: Icons.help, title: "Help and Support"),
     MyThirdList(icon: Icons.info_rounded, title: "About Us"),
     MyThirdList(icon: Icons.lock, title: "Privacy Policy"),
   ];

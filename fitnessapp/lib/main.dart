@@ -1,4 +1,4 @@
-import 'package:fitnessapp/gym_detail.dart';
+import 'package:fitnessapp/bottombar_pages/discover.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GymDetail(),
+      home: DiscoverPage(),
     );
   }
 }
