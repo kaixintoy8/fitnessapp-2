@@ -1,5 +1,7 @@
-import 'package:fitnessapp/sign_in/continue_phone_number.dart';
-import 'package:fitnessapp/sign_in/sign_in_page.dart';
+import 'package:fitnessapp/bottombar_pages/profile/edit_personal_information.dart';
+import 'package:fitnessapp/bottombar_pages/profile/help_and_support.dart';
+import 'package:fitnessapp/bottombar_pages/profile/profile.dart';
+import 'package:fitnessapp/sign_in/starting_pages/starting_first.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +15,37 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ContinuePhoneNumber(),
+      home: HelpAndSupport(),
+    );
+  }
+}
+
+class Onboarding extends StatefulWidget {
+  const Onboarding({super.key});
+
+  @override
+  State<Onboarding> createState() => _OnboardingState();
+}
+
+class _OnboardingState extends State<Onboarding> {
+  @override
+  void initState() {
+    super.initState();
+    
+    Future.delayed(Duration(seconds: 2),(){
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>StartingFirst()));
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(
+        child: Container(
+          height: 50,
+          width: 400,
+          child: Image.asset("images/appname.png")),
+      ),
     );
   }
 }

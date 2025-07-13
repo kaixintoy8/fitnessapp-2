@@ -1,7 +1,7 @@
-import 'package:fitnessapp/bottombar_pages/profile.dart';
+import 'package:fitnessapp/bottombar_pages/profile/profile.dart';
 import 'package:fitnessapp/bottombar_pages/qr.dart';
 import 'package:fitnessapp/bottombar_pages/workout.dart';
-import 'package:fitnessapp/bottombar_pages/discover.dart';
+import 'package:fitnessapp/bottombar_pages/discover/discover.dart';
 import 'package:fitnessapp/views/for_u_cards/foru_first_card.dart';
 import 'package:fitnessapp/views/for_u_cards/foru_third_card.dart';
 import 'package:fitnessapp/views/latest_seen_card.dart';

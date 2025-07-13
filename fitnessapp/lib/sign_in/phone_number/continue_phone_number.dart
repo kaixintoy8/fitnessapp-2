@@ -1,5 +1,6 @@
 
 
+import 'package:fitnessapp/sign_in/phone_number/verify_code.dart';
 import 'package:flutter/material.dart';
 import 'package:country_code_picker_plus/country_code_picker_plus.dart';
 
@@ -11,11 +12,16 @@ class ContinuePhoneNumber extends StatefulWidget {
 }
 
 class _ContinuePhoneNumberState extends State<ContinuePhoneNumber> {
+  final _formKey =GlobalKey<FormState>();
+  final TextEditingController _phoneController =TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.white
+        ),
         backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
@@ -40,12 +46,7 @@ class _ContinuePhoneNumberState extends State<ContinuePhoneNumber> {
                       decoration: BoxDecoration(
                         color: Color(0xFF252525),
                         borderRadius: BorderRadius.only(topLeft: Radius.circular(40),topRight: Radius.circular(40)),
-                        boxShadow: [BoxShadow(
-                          color: Colors.amber,
-                          offset: Offset(5, 15),
-                          blurRadius: 8,
-                          blurStyle: BlurStyle.outer,
-                        ),]
+                       
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -80,21 +81,37 @@ class _ContinuePhoneNumberState extends State<ContinuePhoneNumber> {
                                       initialSelection: 'AZ', 
                                       showCountryOnly: false,
                                       showOnlyCountryWhenClosed: false,
+                                      textStyle: TextStyle(color: Color(0xFFBDBDBD)),
+                                      flagDecoration:BoxDecoration(
+                                        borderRadius: BorderRadius.circular(100),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(10.0),
-                                        child: SizedBox(
-                                          height: 70,
-                                          width: 200,
-                                          child: TextField(
-                                            style: TextStyle(
-                                              color: Color(0xFFF2F2F2)
-                                            ),
-                                            cursorColor: Color(0xFFF2F2F2),
-                                            decoration: InputDecoration(
-                                              hintText: "Phone number",
-                                              hintStyle: TextStyle(color: Colors.white),
-                                              border: InputBorder.none
+                                      ),
+                                      Form(
+                                        key: _formKey,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(13.0),
+                                          child: SizedBox(
+                                            height: 70,
+                                            width: 200,
+                                            child: TextFormField(
+                                              controller: _phoneController,
+                                              style: TextStyle(
+                                                color: Color(0xFFF2F2F2)
+                                              ),
+                                              keyboardType: TextInputType.phone,
+                                              cursorColor: Color(0xFFF2F2F2),
+                                              decoration: InputDecoration(
+                                                hintText: "Phone number",
+                                                hintStyle: TextStyle(color: Color(0xFFF2F2F2)),
+                                                border: InputBorder.none
+                                              ),
+                                              validator: (value) {
+                                                if (value == null || value.trim().length <6 ){
+                                                  return 'Please enter a phone number of at least 6 digits';
+                                                }else{
+                                                  return null;
+                                                }
+                                              },
                                             ),
                                           ),
                                         ),
@@ -110,9 +127,15 @@ class _ContinuePhoneNumberState extends State<ContinuePhoneNumber> {
                             width: 450,
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: Color(0xFF62D794)
+                                backgroundColor: Color(0xFF62D794),
+                                 shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20)
+                                ),
                               ),
                               onPressed: (){
+                                if (_formKey.currentState!.validate()){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>VerifyCode()));
+                                }
                                }, 
                               child: Text("Continue",style: TextStyle(color: Colors.white,fontSize: 20),)),
                           )

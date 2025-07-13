@@ -38,7 +38,7 @@ class _NearbyCardState extends State<NearbyCard> {
                     Container(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 13.0,vertical: 5),
-                        child: Text(widget.topTitle,style: TextStyle(color: Colors.black),),
+                        child: Text(widget.topTitle,style: TextStyle(color: Colors.white),),
                       ),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(10)),

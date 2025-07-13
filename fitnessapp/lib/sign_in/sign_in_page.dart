@@ -1,4 +1,6 @@
-import 'package:fitnessapp/sign_in/continue_phone_number.dart';
+import 'package:fitnessapp/sign_in/phone_number/accept_page.dart';
+import 'package:fitnessapp/sign_in/email/accept_second_page.dart';
+import 'package:fitnessapp/sign_in/phone_number/continue_phone_number.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatefulWidget {
@@ -51,7 +53,7 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 100,),
+                  SizedBox(height: 90,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -77,7 +79,7 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 20,),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 15),
                     height: 70,
@@ -85,7 +87,7 @@ class _SignInPageState extends State<SignInPage> {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>ContinuePhoneNumber()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>AcceptPage()));
                           },
                           child: Container(
                             height: 60,
@@ -104,32 +106,37 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     decoration: BoxDecoration(
                     color: Color(0xFF62D794),
-                    borderRadius: BorderRadius.all(Radius.circular(20))
+                    borderRadius: BorderRadius.all(Radius.circular(10))
                     ),
                   ),
                   SizedBox(height: 20,),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
-                    height: 70,
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(100)),
-                            color: Colors.grey.shade200
-                          ),
-                          child: Icon(Icons.markunread,color: Color(0xFF62D794),size: 30,)
-                          ),
-                        SizedBox(width: 75,),
-                        Text("Contiune with email",
-                        style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
-                      ],
-                    ),
-                    decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(20))
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> AccepSecondPage()));
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 15),
+                      height: 70,
+                      child: Row(
+                        children: [
+                          Container(
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(100)),
+                              color: Colors.grey.shade200
+                            ),
+                            child: Icon(Icons.markunread,color: Color(0xFF62D794),size: 30,)
+                            ),
+                          SizedBox(width: 75,),
+                          Text("Contiune with email",
+                          style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
+                        ],
+                      ),
+                      decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(20))
+                      ),
                     ),
                   ),
                   SizedBox(height: 10,),
@@ -153,7 +160,7 @@ class _SignInPageState extends State<SignInPage> {
                           height: 70,
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.all(Radius.circular(20))
+                            borderRadius: BorderRadius.all(Radius.circular(10))
                           ),
                           child: Image.asset("images/apple.png",fit: BoxFit.scaleDown,),
                         )),

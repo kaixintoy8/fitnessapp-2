@@ -1,6 +1,6 @@
-import 'package:fitnessapp/bottombar_pages/discover.dart';
+import 'package:fitnessapp/bottombar_pages/discover/discover.dart';
 import 'package:fitnessapp/bottombar_pages/for_u.dart';
-import 'package:fitnessapp/bottombar_pages/profile.dart';
+import 'package:fitnessapp/bottombar_pages/profile/profile.dart';
 import 'package:fitnessapp/bottombar_pages/workout.dart';
 import 'package:fitnessapp/views/qr_card.dart';
 import 'package:flutter/material.dart';
