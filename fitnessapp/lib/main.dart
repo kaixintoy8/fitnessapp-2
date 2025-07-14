@@ -1,6 +1,5 @@
-import 'package:fitnessapp/bottombar_pages/discover/discover.dart';
-import 'package:fitnessapp/bottombar_pages/profile/history.dart';
 import 'package:fitnessapp/sign_in/starting_pages/starting_first.dart';
+import 'package:fitnessapp/sign_in/starting_pages/starting_third.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: DiscoverPage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Onboarding());
   }
 }
 

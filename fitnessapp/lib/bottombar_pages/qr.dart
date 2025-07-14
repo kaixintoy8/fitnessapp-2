@@ -17,109 +17,114 @@ class _QrState extends State<Qr> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: 306,
-            color: Color(0xFF252525),
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Your Package",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      SizedBox(height: 20),
-                      Container(
-                        height: 76,
-                        width: 140,
-                        child: Text(
-                          "Standart Monthly",
-                          style: TextStyle(
-                            color: Color(0xFF62D794),
-                            fontSize: 25,
-                          ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              height: 306,
+              color: Color(0xFF252525),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Your Package",
+                          style: TextStyle(color: Colors.white),
                         ),
-                      ),
-                      SizedBox(height: 20),
-                      Row(
-                        children: [
-                          Container(
-                            height: 5,
-                            width: 50,
-                            decoration: BoxDecoration(
-                              color: Color(0xFF62D794),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                          Container(
-                            height: 5,
-                            width: 90,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(10),
-                                bottomRight: Radius.circular(10),
-                              ),
-                              color: Color(0xFF4F4F4F),
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 20),
-                      Container(
-                        height: 40,
-                        width: 150,
-                        decoration: BoxDecoration(
-                          color: Color(0xFF4F4F4F),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Center(
+                        SizedBox(height: 20),
+                        Container(
+                          height: 76,
+                          width: 140,
                           child: Text(
-                            "View package details",
-                            style: TextStyle(color: Colors.white, fontSize: 13),
+                            "Standart Monthly",
+                            style: TextStyle(
+                              color: Color(0xFF62D794),
+                              fontSize: 25,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Container(
+                              height: 5,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                color: Color(0xFF62D794),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            Container(
+                              height: 5,
+                              width: 90,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(10),
+                                  bottomRight: Radius.circular(10),
+                                ),
+                                color: Color(0xFF4F4F4F),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Container(
+                          height: 40,
+                          width: 150,
+                          decoration: BoxDecoration(
+                            color: Color(0xFF4F4F4F),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "View package details",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 13,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.only(left: 20.0),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                "History",
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                ],
               ),
             ),
-          ),
-          SizedBox(height: 20),
-          SizedBox(
-            height: 500,
-            child: ListView(
-              children: [
-                QrCard(name: "Sliver Star Fitness"),
-                SizedBox(height: 20),
-                QrCard(name: "Gym Ultra"),
-                SizedBox(height: 20),
-                QrCard(name: "Super Gym"),
-                SizedBox(height: 20),
-                QrCard(name: "The Gym"),
-                SizedBox(height: 20),
-                QrCard(name: "The Gym"),
-              ],
+            SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "History",
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+              ),
             ),
-          ),
-        ],
+            SizedBox(height: 20),
+            SizedBox(
+              height: 500,
+              child: ListView(
+                children: [
+                  QrCard(name: "Sliver Star Fitness"),
+                  SizedBox(height: 20),
+                  QrCard(name: "Gym Ultra"),
+                  SizedBox(height: 20),
+                  QrCard(name: "Super Gym"),
+                  SizedBox(height: 20),
+                  QrCard(name: "The Gym"),
+                  SizedBox(height: 20),
+                  QrCard(name: "The Gym"),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
 
       backgroundColor: Colors.black,
