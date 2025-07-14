@@ -1,6 +1,5 @@
-import 'package:fitnessapp/bottombar_pages/profile/edit_personal_information.dart';
-import 'package:fitnessapp/bottombar_pages/profile/help_and_support.dart';
-import 'package:fitnessapp/bottombar_pages/profile/profile.dart';
+import 'package:fitnessapp/bottombar_pages/discover/discover.dart';
+import 'package:fitnessapp/bottombar_pages/profile/history.dart';
 import 'package:fitnessapp/sign_in/starting_pages/starting_first.dart';
 import 'package:flutter/material.dart';
 
@@ -13,10 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HelpAndSupport(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: DiscoverPage());
   }
 }
 
@@ -31,11 +27,15 @@ class _OnboardingState extends State<Onboarding> {
   @override
   void initState() {
     super.initState();
-    
-    Future.delayed(Duration(seconds: 2),(){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>StartingFirst()));
+
+    Future.delayed(Duration(seconds: 2), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => StartingFirst()),
+      );
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +44,8 @@ class _OnboardingState extends State<Onboarding> {
         child: Container(
           height: 50,
           width: 400,
-          child: Image.asset("images/appname.png")),
+          child: Image.asset("images/appname.png"),
+        ),
       ),
     );
   }

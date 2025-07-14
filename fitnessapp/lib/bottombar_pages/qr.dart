@@ -104,7 +104,7 @@ class _QrState extends State<Qr> {
           ),
           SizedBox(height: 20),
           SizedBox(
-            height: 450,
+            height: 500,
             child: ListView(
               children: [
                 QrCard(name: "Sliver Star Fitness"),
